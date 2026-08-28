@@ -1,0 +1,100 @@
+{
+  "robot": {
+    "type": "seeed_b601_dm_follower",
+    "port": "",
+    "can_adapter": "dm_device",
+    "dm_device_type": "usb2canfd",
+    "dm_device_channel": "0",
+    "dm_device_index": 0,
+    "calibrate_on_connect": false,
+    "enable_motors_on_connect": true,
+    "safe_zero_on_disconnect": false,
+    "motor_can_ids": {
+      "shoulder_pan": [33, 49],
+      "shoulder_lift": [34, 50],
+      "elbow_flex": [35, 51],
+      "wrist_flex": [36, 52],
+      "wrist_yaw": [37, 53],
+      "wrist_roll": [38, 54],
+      "gripper": [39, 55]
+    },
+    "joint_directions": {
+      "shoulder_pan": 1.0,
+      "shoulder_lift": 1.0,
+      "elbow_flex": 1.0,
+      "wrist_flex": 1.0,
+      "wrist_yaw": 1.0,
+      "wrist_roll": 1.0,
+      "gripper": 0.89
+    },
+    "pos_vel_velocity": [58.0, 58.0, 72.0, 48.0, 39.0, 58.0, 100.0],
+    "cameras": {
+      "wrist": {
+        "type": "opencv",
+        "index_or_path": "/dev/v4l/by-id/usb-Intel_R__RealSense_TM__Depth_Camera_405_Intel_R__RealSense_TM__Depth_Camera_405_421423071031-video-index4",
+        "width": 640,
+        "height": 480,
+        "fps": 30,
+        "color_mode": "rgb",
+        "fourcc": "YUYV",
+        "rotation": 0,
+        "warmup_s": 1
+      },
+      "scene": {
+        "type": "opencv",
+        "index_or_path": "/dev/v4l/by-id/usb-Intel_R__RealSense_TM__Depth_Camera_435i_Intel_R__RealSense_TM__Depth_Camera_435i_345523060429-video-index0",
+        "width": 640,
+        "height": 480,
+        "fps": 30,
+        "color_mode": "rgb",
+        "fourcc": "YUYV",
+        "rotation": 0,
+        "warmup_s": 1
+      }
+    }
+  },
+  "teleop": {
+    "type": "seeed_b601_dm_leader",
+    "dm_device_type": "usb2canfd",
+    "dm_device_channel": "0",
+    "dm_device_index": 1,
+    "calibrate_on_connect": false,
+    "auto_gravity_compensation": true,
+    "max_startup_gripper_offset_deg": 90.0,
+    "action_filter_alpha": {
+      "shoulder_pan.pos": 0.5975,
+      "shoulder_lift.pos": 0.5175,
+      "elbow_flex.pos": 0.5175,
+      "wrist_flex.pos": 0.4775,
+      "wrist_yaw.pos": 0.4275,
+      "wrist_roll.pos": 0.5375,
+      "gripper.pos": 0.6975
+    },
+    "action_filter_deadband": {
+      "shoulder_pan.pos": 0.5025,
+      "shoulder_lift.pos": 0.5025,
+      "elbow_flex.pos": 0.8525,
+      "wrist_flex.pos": 0.4525,
+      "wrist_yaw.pos": 0.4525,
+      "wrist_roll.pos": 0.8525,
+      "gripper.pos": 0.2025
+    }
+  },
+  "dataset": {
+    "repo_id": "local/act_green_to_paper",
+    "root": "data/act_green_to_paper",
+    "single_task": "Pick up the green object and place it on the white paper.",
+    "num_episodes": 15,
+    "episode_time_s": 15,
+    "reset_time_s": 30,
+    "fps": 30,
+    "video": true,
+    "vcodec": "h264",
+    "video_encoding_batch_size": 15,
+    "push_to_hub": false
+  },
+  "display_data": true,
+  "manual_episode_control": true,
+  "play_sounds": false,
+  "resume": false
+}

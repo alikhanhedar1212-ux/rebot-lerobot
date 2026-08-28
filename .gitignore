@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local development environments and caches
+.conda/
+.cache/
+.cargo-sdk/
+.rustup-sdk/
+.claude/
+.codex/
+.agents/
+.env
+.venv/
+venv/
+
+# Machine-specific hardware configuration
+config/machine.env
+
+# Web UI: exclude the entire web control panel
+control_panel/
+
+# Web examples
+motorbridge-sdk-work/examples/web/
+motorbridge-sdk-work/examples/http_quad_control_demo/
+motorbridge-sdk-work/integrations/ws_gateway/
+motorbridge-sdk-work/bindings/python/examples/*.html
+
+# Datasets, videos, trained models and backups
+data/
+outputs/
+checkpoints/
+*.parquet
+*.mp4
+*.avi
+*.mov
+*.safetensors
+*.tar
+*.tar.gz
+*.zip
+
+# Build artifacts
+node_modules/
+.next/
+dist/
+build/
+target/
+*.log
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Backups of nested Git metadata
+.nested-git-backups/
